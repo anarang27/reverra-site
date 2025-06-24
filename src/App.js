@@ -187,15 +187,14 @@ function App() {
     <Router>
       <div className="min-h-screen font-sans text-gray-800">
         {/* Header */}
-        <header className="p-3 shadow-md flex justify-between items-center" style={{ backgroundColor: '#27532F' }}>
+        <header className="p-3 shadow-md flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 sm:space-x-6" style={{ backgroundColor: '#27532F' }}>
           <img src="/transparent_logo.png" alt="Reverra Logo" className="h-16" />
-          <nav className="flex space-x-10" style={{ fontFamily: 'Newsreader, serif' }}>
-            <Link to="/" className="text-base font-medium" style={{ color: '#F8F6D0' }}>Home</Link>
-            <Link to="/about" className="text-base font-medium" style={{ color: '#F8F6D0' }}>About</Link>
-            <Link to="/services" className="text-base font-medium" style={{ color: '#F8F6D0' }}>Services</Link>
-            <Link to="/contact" className="text-base font-medium" style={{ color: '#F8F6D0' }}>Contact</Link>
-          </nav>
-
+            <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-10 text-sm sm:text-base" style={{ fontFamily: 'Newsreader, serif' }}>
+              <Link to="/" className="font-medium" style={{ color: '#F8F6D0' }}>Home</Link>
+              <Link to="/about" className="font-medium" style={{ color: '#F8F6D0' }}>About</Link>
+              <Link to="/services" className="font-medium" style={{ color: '#F8F6D0' }}>Services</Link>
+              <Link to="/contact" className="font-medium" style={{ color: '#F8F6D0' }}>Contact</Link>
+            </nav>
         </header>
 
         {/* Routes */}
