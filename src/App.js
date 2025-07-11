@@ -6,6 +6,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import GooeyNav from './components/GooeyNav'; // adjust path if needed
+import BlurText from './components/BlurText';
+
 
 
 const handleAnimationComplete = () => {
@@ -26,32 +28,40 @@ const Home = () => (
   <div>
     <section className="relative w-full h-screen">
       {/* Background Image */}
-      <img src="/website_background_image.jpg" alt="Reverra Hero" className="object-cover w-full h-full" />
+      <img
+        src="/website_background_image.jpg"
+        alt="Reverra Hero"
+        className="object-cover w-full h-full"
+      />
 
       {/* Overlay with Logo, Nav, Headline, and Swiper */}
-      {/* Logo + GooeyNav */}
-<div className="absolute top-0 left-0 w-full flex flex-col items-center p-4 sm:p-8 z-10">
-  <img src="/transparent_logo.png" alt="Reverra Logo" className="h-16 mb-4" />
+      <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-start pt-[10%] px-4 text-[#F8F6D0]">
 
-  <div style={{ height: '80px', position: 'relative' }}>
-    <GooeyNav
-      items={[
-        { label: "Home", href: "/" },
-        { label: "About", href: "/about" },
-        { label: "Services", href: "/services" },
-        { label: "Contact", href: "/contact" },
-      ]}
-      particleCount={15}
-      particleDistances={[90, 10]}
-      particleR={100}
-      initialActiveIndex={0}
-      animationTime={600}
-      timeVariance={300}
-      colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-    />
-  </div>
-</div>
-
+        {/* Logo + GooeyNav */}
+        <div className="w-full flex flex-col items-center p-4 sm:p-8 z-10">
+          <img
+            src="/transparent_logo.png"
+            alt="Reverra Logo"
+            className="h-16 mb-4"
+          />
+          <div style={{ height: '80px', position: 'relative' }}>
+            <GooeyNav
+              items={[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
+                { label: "Services", href: "/services" },
+                { label: "Contact", href: "/contact" },
+              ]}
+              particleCount={15}
+              particleDistances={[90, 10]}
+              particleR={100}
+              initialActiveIndex={0}
+              animationTime={600}
+              timeVariance={300}
+              colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+            />
+          </div>
+        </div>
 
         {/* Main Headline */}
         <h2
@@ -75,6 +85,7 @@ const Home = () => (
           >
             Did you know?
           </h3>
+
           <Swiper
             modules={[Navigation, Pagination]}
             navigation
@@ -122,6 +133,7 @@ const Home = () => (
     </section>
   </div>
 );
+
 
 
 const About = () => (
