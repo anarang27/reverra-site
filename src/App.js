@@ -5,128 +5,12 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import BlurText from "./BlurText";
+import GooeyNav from './components/GooeyNav'; // adjust path if needed
+
 
 const handleAnimationComplete = () => {
   console.log('Animation completed!');
 };
-
-import { motion } from 'framer-motion';
-import { useEffect, useRef, useState, useMemo } from 'react';
-
-const buildKeyframes = (from, steps) => {
-  const keys = new Set([
-    ...Object.keys(from),
-    ...steps.flatMap((s) => Object.keys(s)),
-  ]);
-
-  const keyframes = {};
-  keys.forEach((k) => {
-    keyframes[k] = [from[k], ...steps.map((s) => s[k])];
-  });
-  return keyframes;
-};
-
-const BlurText = ({
-  text = '',
-  delay = 200,
-  className = '',
-  animateBy = 'words',
-  direction = 'top',
-  threshold = 0.1,
-  rootMargin = '0px',
-  animationFrom,
-  animationTo,
-  easing = (t) => t,
-  onAnimationComplete,
-  stepDuration = 0.35,
-}) => {
-  const elements = animateBy === 'words' ? text.split(' ') : text.split('');
-  const [inView, setInView] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (!ref.current) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.unobserve(ref.current);
-        }
-      },
-      { threshold, rootMargin }
-    );
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [threshold, rootMargin]);
-
-  const defaultFrom = useMemo(
-    () =>
-      direction === 'top'
-        ? { filter: 'blur(10px)', opacity: 0, y: -50 }
-        : { filter: 'blur(10px)', opacity: 0, y: 50 },
-    [direction]
-  );
-
-  const defaultTo = useMemo(
-    () => [
-      {
-        filter: 'blur(5px)',
-        opacity: 0.5,
-        y: direction === 'top' ? 5 : -5,
-      },
-      { filter: 'blur(0px)', opacity: 1, y: 0 },
-    ],
-    [direction]
-  );
-
-  const fromSnapshot = animationFrom ?? defaultFrom;
-  const toSnapshots = animationTo ?? defaultTo;
-
-  const stepCount = toSnapshots.length + 1;
-  const totalDuration = stepDuration * (stepCount - 1);
-  const times = Array.from({ length: stepCount }, (_, i) =>
-    stepCount === 1 ? 0 : i / (stepCount - 1)
-  );
-
-  return (
-    <p
-      ref={ref}
-      className={className}
-      style={{ display: 'flex', flexWrap: 'wrap' }}
-    >
-      {elements.map((segment, index) => {
-        const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
-
-        const spanTransition = {
-          duration: totalDuration,
-          times,
-          delay: (index * delay) / 1000,
-        };
-        (spanTransition).ease = easing;
-
-        return (
-          <motion.span
-            className="inline-block will-change-[transform,filter,opacity]"
-            key={index}
-            initial={fromSnapshot}
-            animate={inView ? animateKeyframes : fromSnapshot}
-            transition={spanTransition}
-            onAnimationComplete={
-              index === elements.length - 1 ? onAnimationComplete : undefined
-            }
-          >
-            {segment === ' ' ? '\u00A0' : segment}
-            {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
-          </motion.span>
-        );
-      })}
-    </p>
-  );
-};
-
-// export default BlurText; // Removed to avoid multiple default exports
 
 const facts = [
   "U.S. recycling levels are currently at a mere 32%.",
@@ -145,21 +29,29 @@ const Home = () => (
       <img src="/website_background_image.jpg" alt="Reverra Hero" className="object-cover w-full h-full" />
 
       {/* Overlay with Logo, Nav, Headline, and Swiper */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-start pt-[10%] px-4 text-[#F8F6D0]">
-        
-        {/* Logo + Nav Links */}
-        <div className="absolute top-0 left-0 w-full flex flex-col sm:flex-row justify-between items-center p-4 sm:p-8">
-          {/* Logo */}
-          <img src="/transparent_logo.png" alt="Reverra Logo" className="h-16" />
+      {/* Logo + GooeyNav */}
+<div className="absolute top-0 left-0 w-full flex flex-col items-center p-4 sm:p-8 z-10">
+  <img src="/transparent_logo.png" alt="Reverra Logo" className="h-16 mb-4" />
 
-          {/* Nav Links */}
-          <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-10 text-sm sm:text-base" style={{ fontFamily: 'Newsreader, serif' }}>
-            <Link to="/" className="font-medium text-[#F8F6D0]">Home</Link>
-            <Link to="/about" className="font-medium text-[#F8F6D0]">About</Link>
-            <Link to="/services" className="font-medium text-[#F8F6D0]">Services</Link>
-            <Link to="/contact" className="font-medium text-[#F8F6D0]">Contact</Link>
-          </nav>
-        </div>
+  <div style={{ height: '80px', position: 'relative' }}>
+    <GooeyNav
+      items={[
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Services", href: "/services" },
+        { label: "Contact", href: "/contact" },
+      ]}
+      particleCount={15}
+      particleDistances={[90, 10]}
+      particleR={100}
+      initialActiveIndex={0}
+      animationTime={600}
+      timeVariance={300}
+      colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+    />
+  </div>
+</div>
+
 
         {/* Main Headline */}
         <h2
