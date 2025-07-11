@@ -22,8 +22,23 @@ const Home = () => (
       {/* Background Image */}
       <img src="/website_background_image.jpg" alt="Reverra Hero" className="object-cover w-full h-full" />
 
-      {/* Overlay with Headline and Swiper */}
+      {/* Overlay with Logo, Nav, Headline, and Swiper */}
       <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-start pt-[10%] px-4 text-[#F8F6D0]">
+        
+        {/* Logo + Nav Links */}
+        <div className="absolute top-0 left-0 w-full flex flex-col sm:flex-row justify-between items-center p-4 sm:p-8">
+          {/* Logo */}
+          <img src="/transparent_logo.png" alt="Reverra Logo" className="h-16" />
+
+          {/* Nav Links */}
+          <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-10 text-sm sm:text-base" style={{ fontFamily: 'Newsreader, serif' }}>
+            <Link to="/" className="font-medium text-[#F8F6D0]">Home</Link>
+            <Link to="/about" className="font-medium text-[#F8F6D0]">About</Link>
+            <Link to="/services" className="font-medium text-[#F8F6D0]">Services</Link>
+            <Link to="/contact" className="font-medium text-[#F8F6D0]">Contact</Link>
+          </nav>
+        </div>
+
         {/* Main Headline */}
         <h2
           className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10"
@@ -35,11 +50,11 @@ const Home = () => (
         {/* Swiper Carousel */}
         <div className="relative w-full max-w-xl mt-16">
           <h3
-    className="text-xl md:text-2xl font-semibold text-[#F8F6D0] text-center -mb-0"
-    style={{ fontFamily: 'Instrument Serif, serif' }}
-  >
-    Did you know?
-  </h3>
+            className="text-xl md:text-2xl font-semibold text-[#F8F6D0] text-center -mb-0"
+            style={{ fontFamily: 'Instrument Serif, serif' }}
+          >
+            Did you know?
+          </h3>
           <Swiper
             modules={[Navigation, Pagination]}
             navigation
@@ -49,18 +64,18 @@ const Home = () => (
           >
             {facts.map((fact, index) => (
               <SwiperSlide
-  key={index}
-  className="flex items-center justify-center h-full"
->
-  <div className="max-w-2xl w-full text-center px-10">
-    <p
-      className="text-lg md:text-xl leading-relaxed py-14"
-      style={{ fontFamily: 'Newsreader, serif' }}
-    >
-      {fact}
-    </p>
-  </div>
-</SwiperSlide>
+                key={index}
+                className="flex items-center justify-center h-full"
+              >
+                <div className="max-w-2xl w-full text-center px-10">
+                  <p
+                    className="text-lg md:text-xl leading-relaxed py-14"
+                    style={{ fontFamily: 'Newsreader, serif' }}
+                  >
+                    {fact}
+                  </p>
+                </div>
+              </SwiperSlide>
             ))}
           </Swiper>
 
@@ -185,9 +200,8 @@ const Contact = () => (
 function App() {
   return (
     <Router>
-      <div className="min-h-screen font-sans text-gray-800">
         {/* Header */}
-        <header className="p-3 shadow-md flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 sm:space-x-6" style={{ backgroundColor: '#27532F' }}>
+        {/* <header className="p-3 shadow-md flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 sm:space-x-6" style={{ backgroundColor: '#27532F' }}>
           <img src="/transparent_logo.png" alt="Reverra Logo" className="h-16" />
             <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-10 text-sm sm:text-base" style={{ fontFamily: 'Newsreader, serif' }}>
               <Link to="/" className="font-medium" style={{ color: '#F8F6D0' }}>Home</Link>
@@ -195,7 +209,8 @@ function App() {
               <Link to="/services" className="font-medium" style={{ color: '#F8F6D0' }}>Services</Link>
               <Link to="/contact" className="font-medium" style={{ color: '#F8F6D0' }}>Contact</Link>
             </nav>
-        </header>
+        </header> */}
+      <div className="min-h-screen font-sans text-gray-800">
 
         {/* Routes */}
         <Routes>
