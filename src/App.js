@@ -5,8 +5,9 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import GooeyNav from './components/GooeyNav'; // adjust path if needed
-import BlurText from './components/BlurText';
+import GooeyNav from './src/components/GooeyNav';
+ // adjust path if needed
+import BlurText from './src/components/BlurText';
 
 
 
