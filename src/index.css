@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --color-1: #00ffff;
-  --color-2: #ff00ff;
-  --color-3: #ffff00;
-  --color-4: #00ff00;
+  --color-5: #237947; /* green-400 */
+  --color-6: #25472f; /* green-500 */
+  --color-7: #068f18; /* green-600 */
 }

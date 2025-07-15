@@ -2,6 +2,7 @@
   Installed from https://reactbits.dev/tailwind/
 */
 import { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useRef, useEffect, useState } from "react";
 
@@ -90,10 +91,15 @@ const GooeyNav = ({
     textRef.current.innerText = element.innerText;
   };
   const handleClick = (e, index) => {
+    e.preventDefault();
+    if (activeIndex === index) return; // Don't animate if already selected
+
     const liEl = e.currentTarget;
-    if (activeIndex === index) return;
     setActiveIndex(index);
     updateEffectPosition(liEl);
+    navigate(items[index].href); // Trigger route change
+
+    // Reset and trigger particle animation
     if (filterRef.current) {
       const particles = filterRef.current.querySelectorAll(".particle");
       particles.forEach((p) => filterRef.current.removeChild(p));
