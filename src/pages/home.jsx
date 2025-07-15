@@ -33,6 +33,7 @@ const Home = () => {
             <BlurText
               text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
               delay={100}
+              StartDelay={1500}
               animateBy="words"
               direction="top"
               className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10"
