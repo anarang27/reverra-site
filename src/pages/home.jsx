@@ -36,12 +36,12 @@ const Home = () => (
                 {/* Main Headline */}
                 <BlurText
                     text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
-                    delay={150}
                     animateBy="words"
+                    delay={100}
                     direction="top"
-                    onAnimationComplete={() => console.log('Animation completed!')}
                     className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10 mt-16"
                     style={{ fontFamily: 'Instrument Serif, serif' }}
+                    onAnimationComplete={() => console.log("Done animating! 🎉")}
                 />
             </div>
         </section>
