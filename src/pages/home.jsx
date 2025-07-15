@@ -3,6 +3,12 @@ import Header from '../components/Header';
 import BlurText from '../components/BlurText/BlurText';
 
 const Home = () => {
+  const [showText, setShowText] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowText(true), 1500); // Delay before showing text
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
@@ -24,7 +30,7 @@ const Home = () => {
             <BlurText
               text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
               delay={100}
-              StartDelay={1500}
+              startDelay={0} // internal animation delay; actual reveal is handled by `showText`
               animateBy="words"
               direction="top"
               className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10"

@@ -17,6 +17,7 @@ const buildKeyframes = (from, steps) => {
 const BlurText = ({
   text = "",
   delay = 200,
+  startDelay = 0, // ✅ ADD THIS
   className = "",
   animateBy = "words",
   direction = "top",
@@ -45,7 +46,6 @@ const BlurText = ({
     );
     observer.observe(ref.current);
     return () => observer.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [threshold, rootMargin]);
 
   const defaultFrom = useMemo(
@@ -85,7 +85,7 @@ const BlurText = ({
         const spanTransition = {
           duration: totalDuration,
           times,
-          delay: (startDelay + index * delay) / 1000,
+          delay: (startDelay + index * delay) / 1000, // ✅ FIXED
         };
         spanTransition.ease = easing;
 
