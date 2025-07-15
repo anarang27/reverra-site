@@ -85,7 +85,7 @@ const BlurText = ({
         const spanTransition = {
           duration: totalDuration,
           times,
-          delay: startDelay / 1000 + (index * delay) / 1000,
+          delay: (startDelay + index * delay) / 1000,
         };
         spanTransition.ease = easing;
 

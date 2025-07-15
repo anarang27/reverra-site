@@ -3,15 +3,6 @@ import Header from '../components/Header';
 import BlurText from '../components/BlurText/BlurText';
 
 const Home = () => {
-  const [showText, setShowText] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowText(true);
-    }, 1500); // ⏱ startDelay in ms
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div>
