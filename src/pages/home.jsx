@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import BlurText from '../components/BlurText';
+import BlurText from '../components/BlurText/BlurText';
 import { Link } from 'react-router-dom'; // needed for nav links
 
 const Home = () => (
