@@ -1,5 +1,5 @@
 import React from 'react';
-import GooeyNav from './GooeyNav';
+import GooeyNav from '../components/GooeyNav/GooeyNav';
 
 const navItems = [
   { label: "Home", href: "/" },
