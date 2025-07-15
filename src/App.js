@@ -5,23 +5,16 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import GooeyNav from './components/GooeyNav/GooeyNav';
-import BlurText from './components/BlurText/BlurText';
+
 import Header from './components/Header';
 
 
-
-const handleAnimationComplete = () => {
-  console.log('Animation completed!');
-};
-
 const facts = [
   "U.S. recycling levels are currently at a mere 32%.",
-  "Despite only representing 5% of the world population, the U.S. generates more waste than any other country in the world.",
-  "Of the 40 million tons of plastic waste generated in the U.S. in 2021, only 5% to 6% — or about two million tons — was recycled.",
+  "The global average carbon footprint is 4 tons. The U.S. average is 16 tons...",
   "Every hour, 2.5 million plastic bottles are thrown away in the U.S.",
   "Plastic bottles take upwards of 450 years to degrade.",
-  
+
 ];
 
 
