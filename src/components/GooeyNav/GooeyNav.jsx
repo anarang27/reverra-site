@@ -1,6 +1,7 @@
 /*
-	Installed from https://reactbits.dev/tailwind/
+  Installed from https://reactbits.dev/tailwind/
 */
+import { Link } from 'react-router-dom';
 
 import { useRef, useEffect, useState } from "react";
 
@@ -165,7 +166,7 @@ const GooeyNav = ({
             position: absolute;
             inset: -75px;
             z-index: -2;
-            background: black;
+            background: transparent;
           }
           .effect.filter::after {
             content: "";
@@ -290,18 +291,17 @@ const GooeyNav = ({
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-white ${
-                  activeIndex === index ? "active" : ""
-                }`}
+                className={`rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-white ${activeIndex === index ? "active" : ""
+                  }`}
               >
-                <a
+                <Link
+                  to={item.href}
                   onClick={(e) => handleClick(e, index)}
-                  href={item.href}
                   onKeyDown={(e) => handleKeyDown(e, index)}
                   className="outline-none py-[0.6em] px-[1em] inline-block"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
