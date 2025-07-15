@@ -19,21 +19,7 @@ const Header = () => {
       <Link to="/">
         <img src="/Transparent_Logo_Black.png" alt="Reverra Logo" className="h-12 sm:h-16" />
       </Link>
-
-      {/* GooeyNav */}
-      <div style={{ height: '80px', position: 'relative' }}>
-        <GooeyNav
-          items={navItems}
-          initialActiveIndex={activeIndex === -1 ? 0 : activeIndex}
-          particleCount={15}
-          particleDistances={[90, 10]}
-          particleR={100}
-          animationTime={600}
-          timeVariance={300}
-          colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-        />
       </div>
-    </div>
   );
 };
 
