@@ -48,13 +48,6 @@ const Home = () => (
           className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10"
           style={{ fontFamily: 'Instrument Serif, serif' }}
         >
-          <BlurText
-            text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
-            delay={150}
-            animateBy="words"
-            direction="top"
-            onAnimationComplete={handleAnimationComplete}
-          />
         </h2>
 
         {/* Swiper Carousel */}
