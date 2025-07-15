@@ -1,13 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import GooeyNav from './GooeyNav';
 
-const Header = () => (
-  <div className="absolute top-0 right-0 p-6 z-50 flex space-x-6 text-[#F8F6D0] font-medium text-lg" style={{ fontFamily: 'Newsreader, serif' }}>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/services">Services</Link>
-    <Link to="/contact">Contact</Link>
-  </div>
-);
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
+];
 
-export default Header;
+export default function Header() {
+  return (
+    <div className="absolute top-6 left-0 right-0 z-50 flex justify-center">
+      <GooeyNav items={navItems} />
+    </div>
+  );
+}
