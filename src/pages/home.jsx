@@ -11,8 +11,7 @@ const Home = () => (
                 className="object-cover w-full h-full"
             />
 
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-start pt-[10%] px-4 text-[#F8F6D0]">
-
+            <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center px-4 text-[#F8F6D0]">
                 {/* Logo top-left (larger and spaced more) */}
                 <div className="absolute top-6 left-6 z-50">
                     <img
@@ -36,11 +35,11 @@ const Home = () => (
                 {/* Main Headline */}
                 <BlurText
                     text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
-                    delay={150}
+                    delay={100}
+                    startDelay = {1500}
                     animateBy="words"
                     direction="top"
-                    onAnimationComplete={() => console.log('Animation completed!')}
-                    className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10 mt-16"
+                    className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10"
                     style={{ fontFamily: 'Instrument Serif, serif' }}
                 />
             </div>
