@@ -31,7 +31,7 @@ const Home = () => (
       {/* Overlay with Logo, Nav, Headline, and Swiper */}
       <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-start pt-[10%] px-4 text-[#F8F6D0]">
 
-        {/* Logo */}
+        {/* Logo*/}
         <div className="w-full flex flex-col items-center p-4 sm:p-8 z-10">
           <img
             src="/transparent_logo.png"
@@ -48,6 +48,7 @@ const Home = () => (
           className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10"
           style={{ fontFamily: 'Instrument Serif, serif' }}
         >
+          Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet.
         </h2>
 
         {/* Swiper Carousel */}
@@ -110,7 +111,7 @@ const Home = () => (
 
 
 const About = () => (
-  
+
   <div className="bg-[#E1DFD9] w-full">
     <Header />
     {/* Who We Are Section */}
@@ -146,41 +147,41 @@ const About = () => (
         </h2>
         <p className="text-gray-700 text-base md:text-lg leading-relaxed" style={{ fontFamily: 'Newsreader, serif' }}>
           Hi! I’m Aayush Narang — a computer science and finance student at Virginia Tech and the founder of Reverra.
-          <br /><br /> 
+          <br /><br />
           I started this project after noticing how often people (me included!) were unsure about which bin to use — and how much recyclable material was ending up in the wrong place, and that simple observation evolved into a mission.
-        <br /><br />
+          <br /><br />
           Reverra was founded on the belief that waste should never be a guessing game. Whether it’s a student in a university dining hall or a visitor in a public space, our technology eliminates confusion at the bin — replacing hesitation with certainty.
-        <br /><br />
+          <br /><br />
           I believe sustainability should be simple, intuitive, and supported by smart technology. At Reverra, I aim to combine computer vision and environmental impact to help universities and cities reduce contamination and build cleaner habits — one bin at a time.
-        <br /><br />
+          <br /><br />
           Our goal is to equip every public space — campuses, airports, cities — with smart systems that turn everyday actions into environmental wins.
         </p>
       </div>
 
       {/* Image Right */}
       {/* Image Right with LinkedIn */}
-<div className="w-full md:w-1/2 flex flex-col items-center">
-  {/* Profile Image */}
-  <img
-    src="/founder.jpeg"
-    alt="Aayush Narang"
-    className="rounded-full shadow-md w-48 h-48 object-cover mb-4"
-  />
+      <div className="w-full md:w-1/2 flex flex-col items-center">
+        {/* Profile Image */}
+        <img
+          src="/founder.jpeg"
+          alt="Aayush Narang"
+          className="rounded-full shadow-md w-48 h-48 object-cover mb-4"
+        />
 
-  {/* LinkedIn Icon with Link */}
-  <a
-    href="https://www.linkedin.com/in/aayush-narang10"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:opacity-80 transition-opacity duration-200"
-  >
-    <img
-      src="/linkedin_logo.png"
-      alt="LinkedIn Icon"
-      className="h-6 w-6"
-    />
-  </a>
-</div>
+        {/* LinkedIn Icon with Link */}
+        <a
+          href="https://www.linkedin.com/in/aayush-narang10"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity duration-200"
+        >
+          <img
+            src="/linkedin_logo.png"
+            alt="LinkedIn Icon"
+            className="h-6 w-6"
+          />
+        </a>
+      </div>
 
     </div>
   </div>
@@ -211,8 +212,8 @@ const Contact = () => (
 function App() {
   return (
     <Router>
-        {/* Header */}
-        {/* <header className="p-3 shadow-md flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 sm:space-x-6" style={{ backgroundColor: '#27532F' }}>
+      {/* Header */}
+      {/* <header className="p-3 shadow-md flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 sm:space-x-6" style={{ backgroundColor: '#27532F' }}>
           <img src="/transparent_logo.png" alt="Reverra Logo" className="h-16" />
             <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-10 text-sm sm:text-base" style={{ fontFamily: 'Newsreader, serif' }}>
               <Link to="/" className="font-medium" style={{ color: '#F8F6D0' }}>Home</Link>
