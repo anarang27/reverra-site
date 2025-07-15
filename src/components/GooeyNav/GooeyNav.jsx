@@ -2,8 +2,7 @@
   Installed from https://reactbits.dev/tailwind/
 */
 import { Link } from 'react-router-dom';
-import { useLocation, useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
 
 const GooeyNav = ({
@@ -16,6 +15,7 @@ const GooeyNav = ({
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
   initialActiveIndex = 0,
 }) => {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const navRef = useRef(null);
   const filterRef = useRef(null);
