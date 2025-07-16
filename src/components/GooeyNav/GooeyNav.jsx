@@ -1,8 +1,7 @@
 /*
   Installed from https://reactbits.dev/tailwind/
 */
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
 
 const GooeyNav = ({
@@ -15,7 +14,7 @@ const GooeyNav = ({
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
   initialActiveIndex = 0,
 }) => {
-  const navigate = useNavigate();
+  const location = useLocation();
   const containerRef = useRef(null);
   const navRef = useRef(null);
   const filterRef = useRef(null);
@@ -91,15 +90,10 @@ const GooeyNav = ({
     textRef.current.innerText = element.innerText;
   };
   const handleClick = (e, index) => {
-    e.preventDefault();
-    if (activeIndex === index) return; // Don't animate if already selected
-
     const liEl = e.currentTarget;
     setActiveIndex(index);
     updateEffectPosition(liEl);
-    navigate(items[index].href); // Trigger route change
 
-    // Reset and trigger particle animation
     if (filterRef.current) {
       const particles = filterRef.current.querySelectorAll(".particle");
       particles.forEach((p) => filterRef.current.removeChild(p));
@@ -122,6 +116,13 @@ const GooeyNav = ({
       }
     }
   };
+  useEffect(() => {
+    const currentPath = location.pathname;
+    const matchedIndex = items.findIndex((item) => item.href === currentPath);
+    if (matchedIndex !== -1) {
+      setActiveIndex(matchedIndex);
+    }
+  }, [location.pathname]);
   useEffect(() => {
     if (!navRef.current || !containerRef.current) return;
     const activeLi = navRef.current.querySelectorAll("li")[activeIndex];

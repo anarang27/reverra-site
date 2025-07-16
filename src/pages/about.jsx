@@ -1,9 +1,7 @@
 import React from 'react';
-import Header from '../components/Header';
 
 const About = () => (
   <div className="bg-[#E1DFD9] w-full min-h-screen">
-    <Header />
 
     {/* Who We Are Section */}
     <div className="flex flex-col md:flex-row items-center justify-center px-6 py-12 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-12">

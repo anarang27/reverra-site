@@ -21,22 +21,24 @@ const Home = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center px-4 text-[#F8F6D0]">
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col px-4 text-[#F8F6D0]">
           {/* GooeyNav Header */}
           <Header />
 
           {/* Main Headline */}
-          {showText && (
-            <BlurText
-              text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
-              delay={100}
-              startDelay={0} // internal animation delay; actual reveal is handled by `showText`
-              animateBy="words"
-              direction="top"
-              className="text-3xl md:text-5xl text-center font-semibold max-w-4xl leading-tight mb-10"
-              style={{ fontFamily: 'Instrument Serif, serif' }}
-            />
-          )}
+          <div className="flex flex-col items-center justify-center text-center h-full">
+            {showText && (
+              <BlurText
+                text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
+                delay={100}
+                startDelay={0} // internal animation delay; actual reveal is handled by `showText`
+                animateBy="words"
+                direction="top"
+                className="text-3xl md:text-5xl font-semibold max-w-4xl leading-tight mb-10"
+                style={{ fontFamily: 'Instrument Serif, serif' }}
+              />
+            )}
+          </div>
         </div>
       </section>
     </div>

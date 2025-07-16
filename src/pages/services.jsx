@@ -1,9 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
 
 const Services = () => (
-  <div className="relative bg-[#E1DFD9] min-h-screen w-full flex flex-col justify-start items-center pt-[12%] px-4 text-center">
-    <Header />
+  <div className="absolute top-6 left-6 z-50">
+        <img
+          src="/Transparent_Logo_Black.png"
+          alt="Reverra Logo"
+          className="h-28 sm:h-32"
+        />
     <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Instrument Serif, serif' }}>
       Our Services
     </h1>
