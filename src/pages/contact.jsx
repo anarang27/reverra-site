@@ -1,12 +1,18 @@
 import React from 'react';
+import Header from '../components/Header';
 const Contact = () => (
   <div className="relative min-h-screen flex flex-col">
-    <main className="flex-grow flex flex-col items-center justify-center text-center px-8 pt-24">
-      <img
-        src="/Transparent_Logo_Black.png"
-        alt="Reverra Logo"
-        className="h-28 sm:h-32 mb-6"
-      />
+      <div className="absolute top-10 right-10 z-50">
+        <Header showLogo={false} />
+      </div>
+      <main className="flex-grow px-8 pt-24">
+        <div className="absolute top-6 left-6 z-50">
+          <img
+            src="/Transparent_Logo_Black.png"
+            alt="Reverra Logo"
+            className="h-28 sm:h-32"
+          />
+        </div>
       <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Instrument Serif, serif' }}>
         Contact Us
       </h1>
