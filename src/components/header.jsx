@@ -8,17 +8,19 @@ const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Header() {
+export default function Header({ showLogo = true }) {
   return (
     <>
       {/* Logo top-left */}
-      <div className="absolute top-6 left-6 z-50">
-        <img
-          src="/transparent_logo.png"
-          alt="Reverra Logo"
-          className="h-28 sm:h-32"
-        />
-      </div>
+      {showLogo && (
+        <div className="absolute top-6 left-6 z-50">
+          <img
+            src="/transparent_logo.png"
+            alt="Reverra Logo"
+            className="h-28 sm:h-32"
+          />
+        </div>
+      )}
 
       {/* GooeyNav top-right */}
       <div className="absolute top-10 right-10 z-50">

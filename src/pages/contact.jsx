@@ -1,9 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-
 const Contact = () => (
   <div className="relative min-h-screen flex flex-col">
-    <Header />
     <main className="flex-grow flex flex-col items-center justify-center text-center px-8 pt-24">
       <img
         src="/Transparent_Logo_Black.png"
