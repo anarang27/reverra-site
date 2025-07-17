@@ -32,7 +32,7 @@ const Services = () => (
                 />
             </div>
 
-            <div className="text-center mt-6">
+            <div className="text-center mt-20">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Instrument Serif, serif' }}>
                     Services
                 </h1>
