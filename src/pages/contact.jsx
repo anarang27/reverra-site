@@ -32,7 +32,7 @@ const Contact = () => (
                 />
             </div>
 
-            <div className="text-center mt-8">
+            <div className="text-center mt-4">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Instrument Serif, serif' }}>
                     Contact Us
                 </h1>
