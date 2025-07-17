@@ -1,4 +1,5 @@
 import React from 'react';
+import GooeyNav from '../components/GooeyNav/GooeyNav';
 
 const About = () => (
   <div className="bg-[#E1DFD9] w-full min-h-screen relative">
@@ -7,6 +8,22 @@ const About = () => (
         src="/Transparent_Logo_Black.png"
         alt="Reverra Logo Black"
         className="h-20 sm:h-24"
+      />
+    </div>
+    <div className="absolute top-6 right-10 z-50">
+      <GooeyNav
+        items={[
+          { label: "Home", href: "/" },
+          { label: "About", href: "/about" },
+          { label: "Services", href: "/services" },
+          { label: "Contact", href: "/contact" },
+        ]}
+        animationTime={400}
+        particleCount={15}
+        particleDistances={[90, 10]}
+        particleR={100}
+        timeVariance={200}
+        colors={[5, 6, 5, 6, 7, 5]}
       />
     </div>
     <div className="mt-32">
