@@ -26,7 +26,7 @@ const Home = () => {
           <Header />
 
           {/* Main Headline */}
-          <div className="text-center">
+          <div className="flex-1 flex items-center justify-center text-center">
             {showText && (
               <BlurText
                 text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
@@ -34,7 +34,7 @@ const Home = () => {
                 startDelay={0} // internal animation delay; actual reveal is handled by `showText`
                 animateBy="words"
                 direction="top"
-                className="text-3xl md:text-5xl font-semibold max-w-4xl leading-tight mb-10"
+                className="text-3xl md:text-5xl font-semibold max-w-4xl leading-tight mb-10 justify-center"
                 style={{ fontFamily: 'Instrument Serif, serif' }}
               />
             )}
