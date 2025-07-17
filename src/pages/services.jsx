@@ -23,7 +23,7 @@ const Services = () => (
                 colors={[5, 6, 5, 6, 7, 5]}
             />
         </div>
-        <main className="flex-grow px-8 pt-24">
+        <main className="flex-grow px-8 pt-12">
             <div className="absolute top-6 left-6 z-50">
                 <img
                     src="/Transparent_Logo_Black.png"
@@ -32,7 +32,7 @@ const Services = () => (
                 />
             </div>
 
-            <div className="text-center mt-16">
+            <div className="text-center mt-6">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Instrument Serif, serif' }}>
                     Services
                 </h1>
