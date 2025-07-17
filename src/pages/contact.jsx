@@ -10,7 +10,7 @@ const navItems = [
 ];
 
 const Contact = () => (
-    <div className="relative bg-[#E1DFD9] min-h-screen w-full flex flex-col justify-start items-center pt-[12%] px-4 text-center">
+    <div className="relative bg-[#E1DFD9] min-h-screen w-full flex flex-col justify-start items-center pt-8 px-4 text-center">
         <Header showLogo={false} />
         <div className="absolute top-10 right-10 z-50">
             <GooeyNav
@@ -23,7 +23,7 @@ const Contact = () => (
                 colors={[5, 6, 5, 6, 7, 5]}
             />
         </div>
-        <main className="flex-grow px-8 pt-24">
+        <main className="flex-grow px-8 pt-8">
             <div className="absolute top-6 left-6 z-50">
                 <img
                     src="/Transparent_Logo_Black.png"
@@ -32,7 +32,7 @@ const Contact = () => (
                 />
             </div>
 
-            <div className="text-center mt-4">
+            <div className="text-center mt-8">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Instrument Serif, serif' }}>
                     Contact Us
                 </h1>
