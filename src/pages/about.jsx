@@ -1,5 +1,13 @@
 import React from 'react';
+import Header from '../components/Header';
 import GooeyNav from '../components/GooeyNav/GooeyNav';
+
+const navItems = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Contact", href: "/contact" },
+];
 
 const About = () => (
     <div className="relative bg-[#E1DFD9] min-h-screen w-full flex flex-col justify-start items-center pt-[12%] px-4 text-center">
