@@ -33,7 +33,7 @@ const About = () => (
             </div>
         </main>
 
-        <div className="mt-8">
+        <div className="text-center mt-6">
             {/* Who We Are Section */}
             <div className="flex flex-col md:flex-row items-center justify-center px-6 py-12 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
                 <div className="w-full md:w-1/2 text-left">
