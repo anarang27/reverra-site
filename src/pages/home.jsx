@@ -21,12 +21,12 @@ const Home = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col px-4 text-[#F8F6D0]">
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center px-4 text-[#F8F6D0]">
           {/* GooeyNav Header */}
           <Header />
 
           {/* Main Headline */}
-          <div className="flex flex-col items-center justify-center text-center h-full">
+          <div className="text-center">
             {showText && (
               <BlurText
                 text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
