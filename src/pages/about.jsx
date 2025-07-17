@@ -3,7 +3,7 @@ import GooeyNav from '../components/GooeyNav/GooeyNav';
 
 const About = () => (
     <div className="bg-[#E1DFD9] w-full min-h-screen relative">
-        <div className="w-full flex justify-between items-center px-6 pt-24 bg-[#E1DFD9] z-50">
+        <div className="w-full flex justify-between items-center px-6 pt-6 bg-[#E1DFD9] z-50">
             <img
                 src="/Transparent_Logo_Black.png"
                 alt="Reverra Logo Black"
@@ -24,10 +24,10 @@ const About = () => (
                 colors={[5, 6, 5, 6, 7, 5]}
             />
         </div>
-        <div className="mt-4">
+        <div className="mt-8">
 
             {/* Who We Are Section */}
-            <div className="flex flex-col md:flex-row items-center justify-center px-6 py-12 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-12">
+            <div className="flex flex-col md:flex-row items-center justify-center px-6 py-12 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
                 <div className="w-full md:w-1/2 text-left">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'Instrument Serif, serif' }}>
                         Who we are
