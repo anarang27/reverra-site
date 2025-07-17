@@ -3,7 +3,7 @@ import GooeyNav from '../components/GooeyNav/GooeyNav';
 
 const About = () => (
   <div className="bg-[#E1DFD9] w-full min-h-screen relative">
-    <div className="w-full flex justify-between items-center px-6 py-4 bg-[#E1DFD9] z-50">
+    <div className="w-full flex justify-between items-center px-6 pt-24 bg-[#E1DFD9] z-50">
       <img
         src="/Transparent_Logo_Black.png"
         alt="Reverra Logo Black"
