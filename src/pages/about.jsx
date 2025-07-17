@@ -7,7 +7,7 @@ const About = () => (
       <img
         src="/Transparent_Logo_Black.png"
         alt="Reverra Logo Black"
-        className="h-20 sm:h-24"
+        className="h-28 object-contain"
       />
       <GooeyNav
         items={[
@@ -24,7 +24,7 @@ const About = () => (
         colors={[5, 6, 5, 6, 7, 5]}
       />
     </div>
-    <div className="mt-12">
+    <div className="mt-4">
 
       {/* Who We Are Section */}
       <div className="flex flex-col md:flex-row items-center justify-center px-6 py-12 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-12">
