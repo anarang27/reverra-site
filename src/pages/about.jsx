@@ -2,20 +2,11 @@ import React from 'react';
 import GooeyNav from '../components/GooeyNav/GooeyNav';
 
 const About = () => (
-    <div className="bg-[#E1DFD9] w-full min-h-screen relative">
-        <div className="w-full flex justify-between items-center px-6 pt-6 bg-[#E1DFD9] z-50">
-            <img
-                src="/Transparent_Logo_Black.png"
-                alt="Reverra Logo Black"
-                className="h-28 object-contain"
-            />
+    <div className="relative bg-[#E1DFD9] min-h-screen w-full flex flex-col justify-start items-center pt-[12%] px-4 text-center">
+        <Header showLogo={false} />
+        <div className="absolute top-10 right-10 z-50">
             <GooeyNav
-                items={[
-                    { label: "Home", href: "/" },
-                    { label: "About", href: "/about" },
-                    { label: "Services", href: "/services" },
-                    { label: "Contact", href: "/contact" },
-                ]}
+                items={navItems}
                 animationTime={400}
                 particleCount={15}
                 particleDistances={[90, 10]}
@@ -24,8 +15,17 @@ const About = () => (
                 colors={[5, 6, 5, 6, 7, 5]}
             />
         </div>
-        <div className="mt-8">
+        <main className="flex-grow px-8 pt-12">
+            <div className="absolute top-6 left-6 z-50">
+                <img
+                    src="/Transparent_Logo_Black.png"
+                    alt="Reverra Logo"
+                    className="h-28 sm:h-32"
+                />
+            </div>
+        </main>
 
+        <div className="mt-8">
             {/* Who We Are Section */}
             <div className="flex flex-col md:flex-row items-center justify-center px-6 py-12 max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
                 <div className="w-full md:w-1/2 text-left">
