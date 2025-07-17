@@ -10,7 +10,7 @@ const navItems = [
 ];
 
 const Contact = () => (
-    <div className="relative min-h-screen flex flex-col">
+    <div className="relative bg-[#E1DFD9] min-h-screen w-full flex flex-col justify-start items-center pt-[12%] px-4 text-center">
         <Header showLogo={false} />
         <div className="absolute top-10 right-10 z-50">
             <GooeyNav
