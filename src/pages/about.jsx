@@ -10,8 +10,27 @@ const About = () => (
                     src="/Transparent_Logo_Black.png"
                     alt="Reverra Logo"
                     className="h-28 sm:h-32"
-                    
+
                 />
+            </div>
+
+            {/* Buttons in top-right */}
+            <div className="absolute top-6 right-6 z-50 flex space-x-4 bg-white px-4 py-2 rounded-full shadow-md">
+                {[
+                    { label: 'Home', to: '/' },
+                    { label: 'About', to: '/about' },
+                    { label: 'Services', to: '/services' },
+                    { label: 'Contact', to: '/contact' },
+                ].map((item) => (
+                    <a
+                        key={item.to}
+                        href={item.to}
+                        className="bg-white text-black px-4 py-2 rounded-full border border-gray-300 shadow-sm hover:bg-gray-100 transition-all duration-150"
+                        style={{ fontFamily: 'Instrument Serif, serif' }}
+                    >
+                        {item.label}
+                    </a>
+                ))}
             </div>
         </main>
 

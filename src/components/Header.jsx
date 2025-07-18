@@ -16,7 +16,7 @@ export default function Header({ showLogo = true }) {
       )}
 
       {/* Navigation Button Container */}
-      <div className="bg-white px-4 py-2 rounded-full shadow-md flex space-x-4">
+      <div className="flex space-x-4">
         {[
           { label: 'Home', to: '/' },
           { label: 'About', to: '/about' },
@@ -26,8 +26,8 @@ export default function Header({ showLogo = true }) {
           <Link
             key={item.to}
             to={item.to}
-            className={`text-black hover:underline transition-all duration-150 ${
-              location.pathname === item.to ? 'font-semibold underline' : ''
+            className={`bg-white text-black px-4 py-2 rounded-full border border-gray-300 shadow-sm hover:bg-gray-100 transition-all duration-150 ${
+              location.pathname === item.to ? 'font-semibold' : ''
             }`}
             style={{ fontFamily: 'Instrument Serif, serif' }}
           >
