@@ -2,17 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.point {
-  background: radial-gradient(circle, var(--color) 0%, transparent 50%);
-  box-shadow:
-    0 0 8px var(--color),
-    0 0 16px var(--color),
-    0 0 24px var(--color),
-    0 0 32px var(--color);
-}
-
-:root {
-  --color-5: #9F6BFF; /* soft violet */
-  --color-6: #7C3AED; /* bold purple */
-  --color-7: #5B21B6; /* deep glow core */
-}

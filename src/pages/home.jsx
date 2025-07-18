@@ -22,14 +22,13 @@ const Home = () => {
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center px-4 text-[#F8F6D0]">
-          {/* GooeyNav Header */}
           <Header />
 
           {/* Main Headline */}
           <div className="flex-1 flex items-center justify-center text-center">
             {showText && (
               <BlurText
-                text="Revolutionizing the world’s waste disposal streams toward the goal of a cleaner planet."
+                text="Revolutionizing the world’s waste disposal streams towards the goal of a cleaner planet."
                 delay={100}
                 startDelay={0} // internal animation delay; actual reveal is handled by `showText`
                 animateBy="words"

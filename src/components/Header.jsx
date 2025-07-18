@@ -1,12 +1,5 @@
 import React from 'react';
-import GooeyNav from '../components/GooeyNav/GooeyNav';
-
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
-];
+import { Link } from 'react-router-dom';
 
 export default function Header({ showLogo = true }) {
   return (
@@ -22,18 +15,13 @@ export default function Header({ showLogo = true }) {
         </div>
       )}
 
-      {/* GooeyNav top-right */}
-      <div className="absolute top-10 right-10 z-50">
-        <GooeyNav
-          items={navItems}
-          animationTime={400}
-          particleCount={15}
-          particleDistances={[90, 10]}
-          particleR={100}
-          timeVariance={200}
-          colors={[5, 6, 5, 6, 7, 5]} // Green tones
-        />
-      </div>
+      {/* Navigation top-right */}
+      <nav className="absolute top-6 right-6 z-50 flex space-x-6 text-white text-lg">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/contact">Contact</Link>
+      </nav>
     </>
   );
 }
