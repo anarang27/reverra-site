@@ -22,7 +22,8 @@ const Home = () => {
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center px-4 text-[#F8F6D0]">
-          <Header />
+          {/* ✅ Transparent logo and right-aligned buttons */}
+          <Header showLogo={true} logoType="transparent" />
 
           {/* Main Headline */}
           <div className="flex-1 flex items-center justify-center text-center">
@@ -30,7 +31,7 @@ const Home = () => {
               <BlurText
                 text="Revolutionizing the world’s waste disposal streams towards the goal of a cleaner planet."
                 delay={100}
-                startDelay={0} // internal animation delay; actual reveal is handled by `showText`
+                startDelay={0}
                 animateBy="words"
                 direction="top"
                 className="text-3xl md:text-5xl font-semibold max-w-4xl leading-tight mb-10 justify-center"

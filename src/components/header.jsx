@@ -1,22 +1,29 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-export default function Header({ showLogo = true }) {
+export default function Header({ showLogo = true, logoType = 'transparent' }) {
   const location = useLocation();
+
+  const logoSrc =
+    logoType === 'black'
+      ? '/Transparent_Logo_Black.png'
+      : '/transparent_logo.png';
 
   return (
     <div className="absolute top-6 left-6 right-6 z-50 flex justify-between items-center w-full px-6">
-      {/* Logo */}
-      {showLogo && (
+      {/* Logo or spacer */}
+      {showLogo ? (
         <img
-          src="/transparent_logo.png"
+          src={logoSrc}
           alt="Reverra Logo"
           className="h-28 sm:h-32"
         />
+      ) : (
+        <div className="h-28 sm:h-32" />
       )}
 
-      {/* Navigation Button Container */}
-      <div className="flex space-x-4">
+      {/* Navigation Buttons */}
+      <div className="flex space-x-4 bg-white px-4 py-2 rounded-full shadow-md">
         {[
           { label: 'Home', to: '/' },
           { label: 'About', to: '/about' },
