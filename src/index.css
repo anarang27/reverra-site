@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.point {
+  background: radial-gradient(circle, var(--color) 0%, transparent 70%);
+}
+
 :root {
   --color-5: #237947; /* green-400 */
   --color-6: #25472f; /* green-500 */

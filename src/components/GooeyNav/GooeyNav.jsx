@@ -3,7 +3,7 @@
 */
 import { Link, useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
-import { useNavigate }  from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const GooeyNav = ({
   items,
@@ -218,8 +218,8 @@ const GooeyNav = ({
           .point {
             display: block;
             opacity: 0;
-            width: 20px;
-            height: 20px;
+            width: 8px;
+            height: 8px;
             border-radius: 9999px;
             transform-origin: center;
           }
@@ -234,7 +234,8 @@ const GooeyNav = ({
             background: var(--color);
             opacity: 1;
             animation: point calc(var(--time)) ease 1 -350ms;
-          }
+            box-shadow: 0 0 6px var(--color), 0 0 10px var(--color);
+}
           @keyframes particle {
             0% {
               transform: rotate(0deg) translate(calc(var(--start-x)), calc(var(--start-y)));
