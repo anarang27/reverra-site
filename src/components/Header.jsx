@@ -17,8 +17,7 @@ export default function Header({ showLogo = true }) {
 
       {/* Navigation top-right */}
       <nav
-        className="absolute top-6 right-6 z-50 flex space-x-6 text-lg"
-        style={{ fontFamily: 'Instrument Serif, serif', color: '#F8F6D0' }}
+        className="absolute top-6 right-6 z-50 flex space-x-6 text-lg text-[#F8F6D0]" style={{ fontFamily: 'Instrument Serif, serif', color: '#F8F6D0' }}
       >
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
