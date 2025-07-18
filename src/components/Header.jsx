@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export default function Header({ showLogo = true }) {
   return (
-    <>
-      {/* Logo top-left */}
+    <header className="absolute top-6 w-full flex justify-between items-center px-8 z-50">
+      {/* Logo */}
       {showLogo && (
-        <div className="absolute top-6 left-6 z-50">
+        <div>
           <img
             src="/transparent_logo.png"
             alt="Reverra Logo"
@@ -15,15 +15,16 @@ export default function Header({ showLogo = true }) {
         </div>
       )}
 
-      {/* Navigation top-right */}
+      {/* Navigation */}
       <nav
-        className="absolute top-6 right-6 z-50 flex space-x-6 text-lg text-[#F8F6D0]" style={{ fontFamily: 'Instrument Serif, serif', color: '#F8F6D0' }}
+        className="flex space-x-10 text-lg"
+        style={{ fontFamily: 'Instrument Serif, serif', color: '#F8F6D0' }}
       >
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/services">Services</Link>
         <Link to="/contact">Contact</Link>
       </nav>
-    </>
+    </header>
   );
 }
