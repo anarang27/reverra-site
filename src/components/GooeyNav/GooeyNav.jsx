@@ -3,6 +3,7 @@
 */
 import { Link, useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const GooeyNav = ({
   items,
@@ -157,6 +158,8 @@ const GooeyNav = ({
     resizeObserver.observe(containerRef.current);
     return () => resizeObserver.disconnect();
   }, [activeIndex]);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -318,14 +321,18 @@ const GooeyNav = ({
                 className={`rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-white ${activeIndex === index ? "active" : ""
                   }`}
               >
-                <Link
-                  to={item.href}
-                  onClick={(e) => handleClick(e, index)}
+                <span
+                  role="button"
+                  tabIndex={0}
+                  onClick={(e) => {
+                    handleClick(e, index);
+                    setTimeout(() => navigate(item.href), animationTime / 2);
+                  }}
                   onKeyDown={(e) => handleKeyDown(e, index)}
                   className="outline-none py-[0.6em] px-[1em] inline-block"
                 >
                   {item.label}
-                </Link>
+                </span>
               </li>
             ))}
           </ul>
