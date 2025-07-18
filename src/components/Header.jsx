@@ -10,8 +10,8 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
       : '/transparent_logo.png';
 
   return (
-    <div className="relative bg-[#E1DFD9] min-h-screen w-full overflow-hidden">      
-    {/* Logo or spacer */}
+    <div className="absolute top-6 left-6 right-6 z-50 flex justify-between items-center w-full px-6">
+      {/* Logo */}
       {showLogo ? (
         <img
           src={logoSrc}
@@ -22,7 +22,7 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
         <div className="h-28 sm:h-32" />
       )}
 
-      {/* Navigation Buttons */}
+      {/* Right-aligned separate buttons */}
       <div className="flex space-x-4">
         {[
           { label: 'Home', to: '/' },
@@ -33,8 +33,9 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
           <Link
             key={item.to}
             to={item.to}
-            className={`bg-white text-black px-4 py-2 rounded-full border border-gray-300 shadow-sm hover:bg-gray-100 transition-all duration-150 ${location.pathname === item.to ? 'font-semibold' : ''
-              }`}
+            className={`bg-white text-black px-4 py-2 rounded-full border border-gray-300 shadow-sm hover:bg-gray-100 transition-all duration-150 ${
+              location.pathname === item.to ? 'font-semibold' : ''
+            }`}
             style={{ fontFamily: 'Instrument Serif, serif' }}
           >
             {item.label}
