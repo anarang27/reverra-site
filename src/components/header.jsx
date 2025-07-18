@@ -1,30 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Header({ showLogo = true }) {
+  const location = useLocation();
+
   return (
-    <header className="absolute top-6 w-full flex justify-between items-center px-8 z-50">
+    <div className="absolute top-6 left-6 right-6 z-50 flex justify-between items-center w-full px-6">
       {/* Logo */}
       {showLogo && (
-        <div>
-          <img
-            src="/transparent_logo.png"
-            alt="Reverra Logo"
-            className="h-28 sm:h-32"
-          />
-        </div>
+        <img
+          src="/transparent_logo.png"
+          alt="Reverra Logo"
+          className="h-28 sm:h-32"
+        />
       )}
 
-      {/* Navigation */}
-      <nav
-        className="flex space-x-10 text-lg"
-        style={{ fontFamily: 'Instrument Serif, serif', color: '#F8F6D0' }}
-      >
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-    </header>
+      {/* Navigation Button Container */}
+      <div className="bg-white px-4 py-2 rounded-full shadow-md flex space-x-4">
+        {[
+          { label: 'Home', to: '/' },
+          { label: 'About', to: '/about' },
+          { label: 'Services', to: '/services' },
+          { label: 'Contact', to: '/contact' },
+        ].map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            className={`text-black hover:underline transition-all duration-150 ${
+              location.pathname === item.to ? 'font-semibold underline' : ''
+            }`}
+            style={{ fontFamily: 'Instrument Serif, serif' }}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
