@@ -3,7 +3,7 @@
 */
 import { Link, useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate }  from 'react-router-dom';
 
 const GooeyNav = ({
   items,
