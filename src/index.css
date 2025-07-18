@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 .point {
-  background: radial-gradient(circle, var(--color) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--color) 0%, transparent 60%);
+  box-shadow: 0 0 4px var(--color), 0 0 8px var(--color), 0 0 12px var(--color);
 }
 
 :root {
-  --color-5: #237947; /* green-400 */
-  --color-6: #25472f; /* green-500 */
-  --color-7: #068f18; /* green-600 */
+  --color-5: #a855f7; /* purple-500 */
+  --color-6: #9333ea; /* purple-600 */
+  --color-7: #7e22ce; /* purple-700 */
 }

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const GooeyNav = ({
   items,
   animationTime = 600,
-  particleCount = 15,
+  particleCount = 11,
   particleDistances = [90, 10],
   particleR = 100,
   timeVariance = 300,
