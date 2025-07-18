@@ -231,11 +231,15 @@ const GooeyNav = ({
             animation: particle calc(var(--time)) ease 1 -350ms;
           }
           .point {
-            background: var(--color);
+            background: radial-gradient(circle, var(--color) 0%, rgba(255, 255, 255, 0.05) 70%);
             opacity: 1;
             animation: point calc(var(--time)) ease 1 -350ms;
-            box-shadow: 0 0 6px var(--color), 0 0 10px var(--color);
-}
+            box-shadow:
+              0 0 10px var(--color),
+              0 0 20px var(--color),
+              0 0 30px var(--color),
+              0 0 40px var(--color);
+          }
           @keyframes particle {
             0% {
               transform: rotate(0deg) translate(calc(var(--start-x)), calc(var(--start-y)));
