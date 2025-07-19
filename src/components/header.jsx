@@ -23,7 +23,7 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
       )}
 
       {/* Right-aligned separate buttons */}
-      <div className="flex space-x-4">
+      <div className="flex gap-6">
         {[
           { label: 'Home', to: '/' },
           { label: 'About', to: '/about' },
@@ -33,9 +33,8 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
           <Link
             key={item.to}
             to={item.to}
-            className={`bg-white text-black px-4 py-2 rounded-full border border-gray-300 shadow-sm hover:bg-gray-100 transition-all duration-150 ${
-              location.pathname === item.to ? 'font-semibold' : ''
-            }`}
+            className={`bg-white text-black px-6 py-2 rounded-lg border border-gray-300 shadow hover:bg-gray-100 transition-all duration-150 ${location.pathname === item.to ? 'font-semibold' : ''
+              }`}
             style={{ fontFamily: 'Instrument Serif, serif' }}
           >
             {item.label}
