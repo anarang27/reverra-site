@@ -30,13 +30,14 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
           { label: 'Services', to: '/services' },
           { label: 'Contact', to: '/contact' },
         ].map((item) => (
-          <StarBorder
+              <StarBorder
             key={item.to}
             as="button"
             className="custom-class"
             color="cyan"
             speed="5s"
           >
+          
             <Link
               to={item.to}
               className={`bg-white text-black px-6 py-2 rounded-lg border border-gray-300 shadow hover:bg-gray-100 transition-all duration-150 ${location.pathname === item.to ? 'font-semibold' : ''
