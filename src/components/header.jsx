@@ -30,7 +30,7 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
           <StarBorder
             key={item.to}
             as="div"
-            color="cyan"
+            color="green"
             speed="4s"
           >
             <Link

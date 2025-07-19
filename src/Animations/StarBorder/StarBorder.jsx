@@ -1,9 +1,9 @@
 const StarBorder = ({
   as: Component = "button",
   className = "",
-  color = "white",
+  color = "green",
   speed = "6s",
-  thickness = 1,
+  thickness = 10,
   children,
   ...rest
 }) => {
@@ -15,17 +15,18 @@ const StarBorder = ({
     >
       {/* Bottom animation */}
       <div
-        className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
+        className="absolute w-[200%] h-[2px] opacity-80 bottom-0 right-[-100%] animate-star-movement-bottom z-0"
         style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
+          background: `radial-gradient(circle, ${color}, transparent 60%)`,
           animationDuration: speed,
         }}
       />
+
       {/* Top animation */}
       <div
-        className="absolute w-[300%] h-[50%] opacity-70 top-[-10px] left-[-250%] rounded-full animate-star-movement-top z-0"
+        className="absolute w-[200%] h-[2px] opacity-80 top-0 left-[-100%] animate-star-movement-top z-0"
         style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
+          background: `radial-gradient(circle, ${color}, transparent 60%)`,
           animationDuration: speed,
         }}
       />
