@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import StarBorder from '../Animations/StarBorder/StarBorder';
+import StarBorder from './Animations/StarBorder';
 
 export default function Header({ showLogo = true, logoType = 'transparent' }) {
   const location = useLocation();
@@ -30,10 +30,16 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
           { label: 'Services', to: '/services' },
           { label: 'Contact', to: '/contact' },
         ].map((item) => (
-          <StarBorder color="green" speed="4s">
+          <StarBorder
+            key={item.to}
+            as="button"
+            className="custom-class"
+            color="cyan"
+            speed="5s"
+          >
             <Link
               to={item.to}
-              className={`text-black bg-white px-6 py-2 text-sm font-semibold rounded-md hover:bg-gray-100 transition duration-200 ${location.pathname === item.to ? 'font-bold' : ''
+              className={`bg-white text-black px-6 py-2 rounded-lg border border-gray-300 shadow hover:bg-gray-100 transition-all duration-150 ${location.pathname === item.to ? 'font-semibold' : ''
                 }`}
               style={{ fontFamily: 'Instrument Serif, serif' }}
             >
