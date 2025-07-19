@@ -1,22 +1,18 @@
-/*
-	Installed from https://reactbits.dev/tailwind/
-*/
-
 const StarBorder = ({
   as: Component = "button",
   className = "",
-  color = "white",
-  speed = "6s",
+  color = "green",
+  speed = "4s",
   thickness = 1,
   children,
   ...rest
 }) => {
   return (
-    <Component
-      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
+    <Component 
+      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`} 
       style={{
         padding: `${thickness}px 0`,
-        ...rest.style,
+        ...rest.style
       }}
       {...rest}
     >
