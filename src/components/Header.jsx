@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import StarBorder from './StarBorder';
+import StarBorder from './Animations/StarBorder';
 
 export default function Header({ showLogo = true, logoType = 'transparent' }) {
   const location = useLocation();
