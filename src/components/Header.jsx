@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import StarBorder from '../Animations/StarBorder/StarBorder'; // adjust if needed
+import StarBorder from '../Animations/StarBorder/StarBorder';
 
 export default function Header({ showLogo = true, logoType = 'transparent' }) {
   const location = useLocation();
 
-  const logoSrc = logoType === 'black'
-    ? '/Transparent_Logo_Black.png'
-    : '/transparent_logo.png';
+  const logoSrc =
+    logoType === 'black'
+      ? '/Transparent_Logo_Black.png'
+      : '/transparent_logo.png';
 
   return (
-    <div className="absolute top-6 left-6 right-6 z-50 flex justify-between items-center w-full px-6">
+    <div className="absolute top-6 left-6 right-6 z-50 flex items-center w-full px-6">
       {/* Logo */}
       {showLogo ? (
         <img src={logoSrc} alt="Reverra Logo" className="h-28 sm:h-32" />
@@ -18,8 +19,8 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
         <div className="h-28 sm:h-32" />
       )}
 
-      {/* Navigation buttons */}
-      <div className="flex gap-6">
+      {/* Right-aligned buttons - nudged left with smaller margin */}
+      <div className="flex gap-6 ml-auto pr-2"> {/* ⬅️ changed pr-6 to pr-2 */}
         {[
           { label: 'Home', to: '/' },
           { label: 'About', to: '/about' },
@@ -28,10 +29,10 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
         ].map((item) => (
           <StarBorder
             key={item.to}
-            as="div"
+            as="button"
+            className="custom-class"
             color="cyan"
-            speed="4s"
-            thickness={0}
+            speed="5s"
           >
             <Link
               to={item.to}
