@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import StarBorder from './StarBorder';
 
 export default function Header({ showLogo = true, logoType = 'transparent' }) {
   const location = useLocation();
@@ -29,15 +30,22 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
           { label: 'Services', to: '/services' },
           { label: 'Contact', to: '/contact' },
         ].map((item) => (
-          <Link
+          <StarBorder
             key={item.to}
-            to={item.to}
-            className={`bg-white text-black px-6 py-2 rounded-lg border border-gray-300 shadow hover:bg-gray-100 transition-all duration-150 ${location.pathname === item.to ? 'font-semibold' : ''
-              }`}
-            style={{ fontFamily: 'Instrument Serif, serif' }}
+            as="button"
+            className="custom-class"
+            color="cyan"
+            speed="5s"
           >
-            {item.label}
-          </Link>
+            <Link
+              to={item.to}
+              className={`bg-white text-black px-6 py-2 rounded-lg border border-gray-300 shadow hover:bg-gray-100 transition-all duration-150 ${location.pathname === item.to ? 'font-semibold' : ''
+                }`}
+              style={{ fontFamily: 'Instrument Serif, serif' }}
+            >
+              {item.label}
+            </Link>
+          </StarBorder>
         ))}
       </div>
     </div>
