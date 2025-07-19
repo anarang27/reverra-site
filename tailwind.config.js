@@ -1,13 +1,9 @@
-// tailwind.config.js
 module.exports = {
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}', // Add this line!
-  ],
   theme: {
     extend: {
       animation: {
-        'star-movement-bottom': 'star-movement-bottom 4s linear infinite alternate',
-        'star-movement-top': 'star-movement-top 4s linear infinite alternate',
+        'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
+        'star-movement-top': 'star-movement-top linear infinite alternate',
       },
       keyframes: {
         'star-movement-bottom': {
@@ -22,4 +18,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

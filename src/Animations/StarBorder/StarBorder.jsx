@@ -1,5 +1,5 @@
 const StarBorder = ({
-  as: Component = "button",
+  as: Component = "div",
   className = "",
   color = "white",
   speed = "6s",
@@ -9,27 +9,27 @@ const StarBorder = ({
 }) => {
   return (
     <Component
-      className={`relative inline-block overflow-hidden rounded-[12px] ${className}`}
-      style={{ padding: `${thickness}px 0`, ...rest.style }}
+      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
+      style={{
+        padding: `${thickness}px 0`,
+        ...rest.style,
+      }}
       {...rest}
     >
-      {/* Bottom animation */}
       <div
         className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
         style={{
           background: `radial-gradient(circle, ${color}, transparent 10%)`,
           animationDuration: speed,
         }}
-      />
-      {/* Top animation */}
+      ></div>
       <div
         className="absolute w-[300%] h-[50%] opacity-70 top-[-10px] left-[-250%] rounded-full animate-star-movement-top z-0"
         style={{
           background: `radial-gradient(circle, ${color}, transparent 10%)`,
           animationDuration: speed,
         }}
-      />
-      {/* Content */}
+      ></div>
       <div className="relative z-10">
         {children}
       </div>

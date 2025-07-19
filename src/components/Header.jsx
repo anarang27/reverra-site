@@ -11,7 +11,7 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
       : '/transparent_logo.png';
 
   return (
-    <div className="absolute top-6 left-6 right-6 z-50 flex items-center w-full px-6">
+    <div className="absolute top-6 left-6 right-6 z-50 flex items-center justify-between w-full px-6">
       {/* Logo */}
       {showLogo ? (
         <img src={logoSrc} alt="Reverra Logo" className="h-28 sm:h-32" />
@@ -19,8 +19,8 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
         <div className="h-28 sm:h-32" />
       )}
 
-      {/* Right-aligned buttons - nudged left with smaller margin */}
-      <div className="flex gap-6 ml-auto pr-2"> {/* ⬅️ changed pr-6 to pr-2 */}
+      {/* Buttons */}
+      <div className="flex gap-4 mr-8"> {/* ⬅️ Reduced gap and added margin-right for more left shift */}
         {[
           { label: 'Home', to: '/' },
           { label: 'About', to: '/about' },
@@ -29,10 +29,9 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
         ].map((item) => (
           <StarBorder
             key={item.to}
-            as="button"
-            className="custom-class"
+            as="div"
             color="cyan"
-            speed="5s"
+            speed="4s"
           >
             <Link
               to={item.to}
