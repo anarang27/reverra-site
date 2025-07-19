@@ -10,8 +10,7 @@ export default function Header({ showLogo = true, logoType = 'transparent' }) {
       : '/transparent_logo.png';
 
   return (
-    <div className="absolute top-6 left-6 right-6 z-50 flex justify-between items-center w-full px-6">
-      {/* Logo */}
+    <div className="absolute top-6 left-6 right-6 z-50 flex justify-between items-center w-full px-6 pr-12">      {/* Logo */}
       {showLogo ? (
         <img
           src={logoSrc}
