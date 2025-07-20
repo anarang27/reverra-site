@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import ProfileCard from '../components/ProfileCard/ProfileCard';
 
 const About = () => (
   <div className="relative bg-[#E1DFD9] min-h-screen w-full flex flex-col justify-start items-center pt-8 px-4 text-center">
@@ -49,20 +50,19 @@ const About = () => (
             </p>
           </div>
 
-          <div className="w-full md:w-1/2 flex flex-col items-center">
-            <img
-              src="/founder.jpeg"
-              alt="Aayush Narang"
-              className="rounded-full shadow-md w-48 h-48 object-cover mb-4"
+          <div className="w-full md:w-1/2 flex justify-center">
+            <ProfileCard
+              name="Aayush Narang"
+              title=""
+              handle="aayushnarang10"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl="/wm_pic_edited.png"
+              miniAvatarUrl="/founder.jpeg"
+              showUserInfo={true}
+              enableTilt={true}
+              onContactClick={() => window.open('https://www.linkedin.com/in/aayush-narang10', '_blank')}
             />
-            <a
-              href="https://www.linkedin.com/in/aayush-narang10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity duration-200"
-            >
-              <img src="/linkedin_logo.png" alt="LinkedIn Icon" className="h-6 w-6" />
-            </a>
           </div>
         </div>
       </div>
