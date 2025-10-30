@@ -119,8 +119,8 @@
 .pc-inside {
   inset: 1px;
   position: absolute;
-  background-image: var(--inner-gradient);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-image: none;
+  background-color: transparent;
   transform: translate3d(0, 0, 0.01px);
 }
 
@@ -133,7 +133,7 @@
   transition: filter 0.6s ease;
   filter: brightness(0.66) contrast(1.33) saturate(0.33) opacity(0.5);
   animation: holo-bg 18s linear infinite;
-  mix-blend-mode: color-dodge;
+  mix-blend-mode: normal;
 }
 
 .pc-shine,
@@ -223,9 +223,11 @@
     calc(var(--pointer-x) * 0.01) calc(var(--pointer-y) * 0.01);
   background-blend-mode: color-dodge;
   filter: brightness(calc(2 - var(--pointer-from-center))) contrast(calc(var(--pointer-from-center) + 2)) saturate(calc(0.5 + var(--pointer-from-center)));
-  mix-blend-mode: luminosity;
+  mix-blend-mode: normal;
 }
-
+.pc-avatar-content .avatar {
+  filter: brightness(1.1) contrast(1.05);
+}
 .pc-shine::after {
   background-position:
     0 var(--background-y),
@@ -242,29 +244,31 @@
 .pc-glare {
   transform: translate3d(0, 0, 1.1px);
   overflow: hidden;
-  background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y),
-      hsl(248, 25%, 80%) 12%,
-      hsla(207, 40%, 30%, 0.8) 90%);
-  mix-blend-mode: overlay;
-  filter: brightness(0.8) contrast(1.2);
-  z-index: 4;
+  background: none !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
 }
 
+
 .pc-avatar-content {
-  mix-blend-mode: screen;
+
   overflow: hidden;
-}
+} 
 
 .pc-avatar-content .avatar {
   width: 100%;
   position: absolute;
-  left: 52%;
+  left: 50.05%;
   transform: translateX(-50%) scale(1);
-  bottom: -10px;
+  bottom: 0px;
   /* pushed slightly further down */
   opacity: calc(1.75 - var(--pointer-from-center));
+  mix-blend-mode: normal !important;
+filter: none !important;
+opacity: 1 !important;
 }
 
+/*
 .pc-avatar-content::before {
   content: "";
   position: absolute;
@@ -277,7 +281,7 @@
       rgba(0, 0, 0, 1) 90%,
       rgba(0, 0, 0, 1) 100%);
   pointer-events: none;
-}
+} */
 
 .pc-user-info {
   position: absolute;
@@ -402,6 +406,11 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+}
+.pc-details h3 {
+  color: #ba2222; /* ← change this to any color (e.g. #000000, #00C1FF, etc.) */
+  background: none;
+  -webkit-text-fill-color: unset;
 }
 
 @keyframes glow-bg {
