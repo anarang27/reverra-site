@@ -57,7 +57,7 @@ const About = () => (
               handle="aayushnarang10"
               status="Online"
               contactText="Contact Me"
-              avatarUrl="/wm_pic_edited.png"
+              avatarUrl="/Subject.png.png"
               miniAvatarUrl="/founder.jpeg"
               showUserInfo={true}
               enableTilt={true}
